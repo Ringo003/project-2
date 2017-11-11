@@ -1,0 +1,28 @@
+<h1>Eat-Da-Burger!</h1>
+<img src="assets/img/burger.jpg">
+
+<h3>not devoured</h3>
+
+<ul>
+	{{#each burgers}}
+		{{#unless devoured}}
+			{{> burgers/burger-block devoured=true}}
+		{{/unless}}
+	{{/each}}
+</ul>
+
+<h3>devoured</h3>
+
+<ul>
+	{{#each burgers}}
+		{{#if devoured}}
+			{{> burgers/burger-block devoured=false}}
+		{{/if}}
+	{{/each}}
+</ul>
+
+<form class="create-form">
+	<input type="text" id="name" name="name">
+	<button type="submit">Submit</button>
+</form>
+<h3>Enter a burger you want to eat.</h3>
