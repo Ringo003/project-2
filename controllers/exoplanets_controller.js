@@ -4,9 +4,16 @@ var router = express.Router();
 
 var exoplanet = require("../models/exoplanet.js"); //////////////
 
-// review
+
 router.get("/", function(req, res) {
-	exoplanet.selectAll(function(data) {
+	console.log("wow i'm here");
+});
+
+// review
+router.get("/account/:id", function(req, res) {
+	var condition = "id = " + req.params.id;
+
+	exoplanet.selectAllReviews(condition, function(data) {
 		var hbsObject = {
 			burgers: data
 		};
@@ -14,6 +21,15 @@ router.get("/", function(req, res) {
 		res.render("index", hbsObject);
 	});
 });
+
+// cart
+router.get("/cart/:id", function(req, res) {
+	var condition = "id = " + req.params.id;
+
+	exoplanet.selectCart(condition, function(data) {
+
+	});
+})
 
 // planet
 router.get("/:col/:condition", function(req, res) {
@@ -26,7 +42,7 @@ router.get("/:col/:condition", function(req, res) {
 router.get("/exoplanet/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
 
-	exoplanet.select(condition, function(result) {
+	exoplanet.selectPlanet(condition, function(result) {
 
 	});
 });

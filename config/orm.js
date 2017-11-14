@@ -1,14 +1,15 @@
 var connection = require("./connection.js");
 
 var tableForPlanets = "exosale"; ///////////
+var tableForCart = "cart"; ///////////
 var tableForReviews = "review"; /////////////
 var col = "burger_name, devoured, date"; //////////////
 
 var orm = {
 
 	// review
-	selectAll: function(cb) {
-		var queryString = "SELECT * FROM " + tableForReviews + ";";
+	selectAllReviews: function(condition, cb) {
+		var queryString = "SELECT * FROM " + tableForReviews + " WHERE " + condition + ";";
 		
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -18,8 +19,20 @@ var orm = {
 		});
 	},
 
+	// cart
+	selectCart: function(condition, cb) {
+		var queryString = "SELECT * FROM " + tableForCart + " WHERE " + condition + ";";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
+
 	// planet
-	select: function(condition, cb) {
+	selectPlanet: function(condition, cb) {
 		var queryString = "SELECT * FROM " + tableForPlanets + " WHERE " + condition + ";";
 
 		connection.query(queryString, function(err, result) {

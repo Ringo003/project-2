@@ -1,14 +1,20 @@
 var orm = require("../config/orm.js");
 
 var exoplanet = {
-	selectAll: function(cb) {
-		orm.selectAll(function(res) {
+	selectAllReviews: function(condition, cb) {
+		orm.selectAllReviews(condition, function(res) {
 			cb(res);
 		});
 	},
 
-	select: function(condition, cb) {
-		orm.select(condition, function(res) {
+	selectCart: function(condition, cb) {
+		orm.selectCart(condition, function(res) {
+			cb(res);
+		});
+	},
+
+	selectPlanet: function(condition, cb) {
+		orm.selectPlanet(condition, function(res) {
 			cb(res);
 		});
 	},

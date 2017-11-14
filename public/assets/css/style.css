@@ -1,4 +1,14 @@
-img {
-	height: 100px;
-	width: 100px;
+/* General Elements*/
+body{
+	background-image: url('../../pictures/9.jpg');
+}
+h1{
+	color:white;
+}
+h3{
+	color:white;
+}
+.planet-images {
+	/*width: 300px;*/
+	/*height: 100px !important;*/
 }
