@@ -1,13 +1,14 @@
 var connection = require("./connection.js");
 
-var tableName = "exosale"; ///////////
-var col = "burger_name, devoured, date"; 
+var tableForPlanets = "exosale"; ///////////
+var tableForReviews = "review"; /////////////
+var col = "burger_name, devoured, date"; //////////////
 
 var orm = {
 
 	// review
 	selectAll: function(cb) {
-		var queryString = "SELECT * FROM " + tableName + ";";
+		var queryString = "SELECT * FROM " + tableForReviews + ";";
 		
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -19,7 +20,7 @@ var orm = {
 
 	// planet
 	select: function(condition, cb) {
-		var queryString = "SELECT * FROM " + tableName + " WHERE " + condition + ";";
+		var queryString = "SELECT * FROM " + tableForPlanets + " WHERE " + condition + ";";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -31,7 +32,7 @@ var orm = {
 
 	// planet
 	orderBy: function(colName, condition, cb) {
-		var queryString = "SELECT TOP 10 FROM " + tableName + " ORDER BY " + colName + " " + condition + ";";
+		var queryString = "SELECT TOP 10 FROM " + tableForPlanets + " ORDER BY " + colName + " " + condition + ";";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -43,7 +44,7 @@ var orm = {
 
 	// review
 	insertOne: function(vals, cb) {
-		var queryString = "INSERT INTO " + tableName + " (" + col + ") VALUES ('" + vals + "', FALSE, CURRENT_TIMESTAMP);";
+		var queryString = "INSERT INTO " + tableForReviews + " (" + col + ") VALUES ('" + vals + "', FALSE, CURRENT_TIMESTAMP);";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -54,8 +55,8 @@ var orm = {
 	},
 
 	// review, sold
-	updateOne: function(objColVals, condition, cb) {
-		var queryString = "UPDATE " + tableName + " SET sold = " + objColVals + " WHERE " + condition + ";";
+	updateSold: function(objColVals, condition, cb) {
+		var queryString = "UPDATE " + tableForPlanets + " SET sold = " + objColVals + " WHERE " + condition + ";";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {

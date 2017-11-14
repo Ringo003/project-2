@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ksp499/burger.git"
+    "url": "git+https://github.com/Ringo003/project-2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ksp499/burger/issues"
+    "url": "https://github.com/Ringo003/project-2/issues"
   },
-  "homepage": "https://github.com/ksp499/burger#readme",
+  "homepage": "https://github.com/Ringo003/project-2#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

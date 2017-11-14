@@ -25,8 +25,8 @@ var exoplanet = {
 		});
 	},
 
-	updateOne: function(objColVals, condition, cb) {
-		orm.updateOne(objColVals, condition, function(res) {
+	updateSold: function(objColVals, condition, cb) {
+		orm.updateSold(objColVals, condition, function(res) {
 			cb(res);
 		});
 	}
