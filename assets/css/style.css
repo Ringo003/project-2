@@ -1,6 +1,6 @@
 /* General Elements*/
 body{
-	background-color:black;
+	background-image: url('../../pictures/9.jpg');
 }
 h1{
 	color:white;
@@ -8,18 +8,7 @@ h1{
 h3{
 	color:white;
 }
-
-
-/* IDs */
-#blue{
-	color: #3092c7;
-}
-#green{
-	color: #00aa59;
-}
-#red{
-	color: #ec4b5f;
-}
-#yellow{
-	color: #ffc225;
+.planet-images {
+	/*width: 300px;*/
+	/*height: 100px !important;*/
 }
