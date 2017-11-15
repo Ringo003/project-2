@@ -1,6 +1,6 @@
 var connection = require("./connection.js");
 
-var tableForPlanets = "exosale"; ///////////
+var tableForPlanets = "exosale";
 var tableForCart = "cart"; ///////////
 var tableForReviews = "review"; /////////////
 var col = "burger_name, devoured, date"; //////////////
@@ -34,7 +34,7 @@ var orm = {
 	// planet
 	selectPlanet: function(condition, cb) {
 		var queryString = "SELECT * FROM " + tableForPlanets + " WHERE " + condition + ";";
-
+		
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;
@@ -45,8 +45,7 @@ var orm = {
 
 	// planet
 	orderBy: function(colName, condition, cb) {
-		var queryString = "SELECT TOP 10 FROM " + tableForPlanets + " ORDER BY " + colName + " " + condition + ";";
-
+		var queryString = "SELECT * FROM " + tableForPlanets + " ORDER BY " + colName + " " + condition + " LIMIT 10;";
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;

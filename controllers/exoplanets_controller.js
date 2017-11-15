@@ -6,7 +6,7 @@ var exoplanet = require("../models/exoplanet.js"); //////////////
 
 
 router.get("/", function(req, res) {
-	console.log("wow i'm here");
+	res.render("index");
 });
 
 // review
@@ -32,9 +32,12 @@ router.get("/cart/:id", function(req, res) {
 })
 
 // planet
-router.get("/:col/:condition", function(req, res) {
+router.get("/search/:col/:condition", function(req, res) {
 	exoplanet.orderBy(req.params.col, req.params.condition, function(data) {
-		
+		var hbsObject = {
+			planets: data
+		};
+		res.render("index", hbsObject);
 	});
 });
 
@@ -42,8 +45,11 @@ router.get("/:col/:condition", function(req, res) {
 router.get("/exoplanet/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
 
-	exoplanet.selectPlanet(condition, function(result) {
-
+	exoplanet.selectPlanet(condition, function(data) {
+		var hbsObject = {
+			planets: data
+		};
+		res.render("planet", hbsObject);
 	});
 });
 
