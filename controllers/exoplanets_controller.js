@@ -29,6 +29,10 @@ router.get("/cart/:id", function(req, res) {
 	exoplanet.selectCart(condition, function(data) {
 
 	});
+});
+
+router.get("/checkout", function(req, res) {
+	res.render("checkout");
 })
 
 // planet
