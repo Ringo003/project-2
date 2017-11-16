@@ -26,3 +26,9 @@ create database exoplanet_db;
         st_glat FLOAT(15),
         st_actlx FLOAT(15)
         );
+		create table user_table(
+		userid int(11) auto_increment primary key,
+		username varchar(255) unique key not null,
+		password varchar(255) not null,
+		email varchar(255) not null
+		);
