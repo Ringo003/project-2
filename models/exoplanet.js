@@ -30,6 +30,11 @@ var exoplanet = {
 			cb(res);
 		});
 	},
+	insertNewUser: function(vals, cb) {
+		orm.insertOne(vals, function(res) {
+			cb(res);
+		});
+	},
 
 	updateSold: function(objColVals, condition, cb) {
 		orm.updateSold(objColVals, condition, function(res) {

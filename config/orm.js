@@ -3,6 +3,7 @@ var connection = require("./connection.js");
 var tableForPlanets = "exosale";
 var tableForCart = "cart"; ///////////
 var tableForReviews = "review"; /////////////
+var tableForUserInfo = "user_table"
 var col = "burger_name, devoured, date"; //////////////
 
 var orm = {
@@ -57,6 +58,17 @@ var orm = {
 	// review
 	insertOne: function(vals, cb) {
 		var queryString = "INSERT INTO " + tableForReviews + " (" + col + ") VALUES ('" + vals + "', FALSE, CURRENT_TIMESTAMP);";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);			
+		});
+	},
+	//insertion of new user data
+	insertNewUser: function(vals, cb) {
+		var queryString = "INSERT INTO user_table ('username', 'password', 'email') VALUES ('" + vals + "');";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
