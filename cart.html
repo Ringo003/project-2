@@ -20,8 +20,103 @@
     <section class="container">
       <div class="jumbotron">
 	      <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> My Planet</h1>
-      </div>
-    </section>
+  <script>
+$(function() {
+$('#error_message_reg').text("");
+//$( "submitBtnRegister" ).click(function() {
+$('#register_form').on('submit', function()  {
+ //e.preventDefault();
+var error=false; 
+var firstName = $('#payment_first_name').val();
+var lastName = $('#payment_last_name').val();
+var adress = $('#payment_address').val();
+var city = $('#payment_city').val();
+var state = $('#payment_state').val();
+var zip = $('#payment_zip').val();
+var country = $('#payment_country').val();
+var cc_no = $('#payment_card_no').val();
+var cc_month = $('#payment_card_expiry_month').val();
+var cc_year = $('#payment_card_expiry_year').val();
+var cc_ccv = $('#payment_card_ccv').val();
+var postal_code = $('#payment_card_postal_code').val();
+
+
+
+
+
+
+if(firstName == null || firstName == "") {
+            $('#error_message_reg').text("FIrst name is required");
+            var error=true;
+            return false;
+        }
+
+
+
+if(lastName == null || lastName == "") {
+            $('#error_message_reg').text("Last name is required.");
+            var error=true;
+            return false;
+        }
+if(adress == null || adress == "") {
+            $('#error_message_reg').text("Adress is required.");
+            var error=true;
+            return false;
+        }
+if(city == null || city == "") {
+            $('#error_message_reg').text("City is required.");
+            var error=true;
+            return false;
+        }
+if(state == null || state == "") {
+            $('#error_message_reg').text("state is required.");
+            var error=true;
+            return false;
+        }
+if(zip == null || zip == "") {
+            $('#error_message_reg').text("Zip is required.");
+            var error=true;
+            return false;
+        }
+if(country == null || country == "") {
+            $('#error_message_reg').text("country is required.");
+            var error=true;
+            return false;
+        }
+if(cc_no == null || cc_no == "") {
+            $('#error_message_reg').text("Card number is required.");
+            var error=true;
+            return false;
+        }
+if(cc_month == null || cc_month == "") {
+            $('#error_message_reg').text("expiry month is required.");
+            var error=true;
+            return false;
+        }
+if(cc_year == null || cc_year == "") {
+            $('#error_message_reg').text("expiry year is required.");
+            var error=true;
+            return false;
+        }
+if(cc_ccv == null || cc_ccv == "") {
+            $('#error_message_reg').text("CVV is required.");
+            var error=true;
+            return false;
+        }
+if(postal_code == null || postal_code == "") {
+            $('#error_message_reg').text("postal code is required.");
+            var error=true;
+            return false;
+        }
+if(error==false)
+{
+        $('#error_message_reg').text("");
+        $('#register_form').submit();
+
+}
+});
+});
+</script>
 
     <section class="container">
      <div id=cart>
