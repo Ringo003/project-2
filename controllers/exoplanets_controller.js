@@ -68,6 +68,11 @@ router.post("/api/cart/:account/:planet", function(req, res) {
 	});
 });
 
+// sign up
+router.get("/signup/", function(req, res) {
+	res.render("signUp");
+});
+
 // planet
 router.put("/api/exoplanets/:id", function(req, res) {
 	var condition = "id = " + req.params.id;

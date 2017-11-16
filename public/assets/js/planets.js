@@ -32,6 +32,7 @@ $(function() {
 	});
 
 	$(".viewButton").on("click", function(event) {
+
 		var id = $(this).data("id");
 		var url = "http://localhost:3000/exoplanet/" + id;
 		window.location.href=url;
@@ -43,7 +44,7 @@ $(function() {
 		// IF NOT SOLD
 
 		$.post("/api/cart/1/" + id).done(function(data) {
-			
+
 		});
 
 		$.ajax({
@@ -54,5 +55,11 @@ $(function() {
 			}
 		});
 	});
+
+	$("#checkoutButton").on("click", function(event) {
+
+		var url = "http://localhost:3000/checkout";
+		window.location.href=url;
+	})
 
 });
