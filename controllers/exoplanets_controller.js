@@ -22,18 +22,9 @@ router.get("/account/:id", function(req, res) {
 	});
 });
 
-// cart
-router.get("/cart/:id", function(req, res) {
-	var condition = "id = " + req.params.id;
-
-	exoplanet.selectCart(condition, function(data) {
-
-	});
-});
-
 router.get("/checkout", function(req, res) {
 	res.render("checkout");
-})
+});
 
 // planet
 router.get("/search/:col/:condition", function(req, res) {
@@ -57,10 +48,23 @@ router.get("/exoplanet/:id", function(req, res) {
 	});
 });
 
-// review
-router.post("/api/exoplanets", function(req, res) {
-	exoplanet.insertOne(req.body.name, function(result) {
-		res.json({ id: result.insertId });
+// cart
+router.get("/cart/:id", function(req, res) {
+	var condition = "id_account = " + req.params.id;
+
+	exoplanet.selectCart(condition, function(data) {
+		var hbsObject = {
+			planets: data
+		};
+		console.log(data);
+		res.render("cart", hbsObject);
+	});
+});
+
+// cart
+router.post("/api/cart/:account/:planet", function(req, res) {
+	exoplanet.insertOne(req.params.account, req.params.planet, function(result) {
+		console.log(result);
 	});
 });
 

@@ -17,8 +17,13 @@ h3{
 	padding: 10px 50px;
 }
 
-th, td {
+#searchTable {
 	color: white;
+	font-size: 25px;
+}
+
+#cartTable {
+	color: black;
 	font-size: 25px;
 }
 

@@ -1,0 +1,36 @@
+<div class="page-header" style="margin: 40px 107.5px 20px 107.5px">
+      <h3 class="text-center">Be the Master of your own Universe</h3> 
+      <h3>25% off 2nd Planet Purchase</h3>
+      <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> <a href="http://localhost:3000/" style="color:white; font-size:70px">My Planet</a></h1>
+      <h1 class="text-right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart" style="text-decoration: none"> Cart</a></h1>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+
+  <div class="row">
+  <div class="col-sm-12 col-md-12">
+      <div class="cartTable">
+        <table class="table table-condensed" id="cartTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each planets}}
+              {{> planets/cart-block}} 
+            {{/each}}
+          </tbody>
+        </table>
+
+        <a href="#" class="btn btn-primary" id="checkoutButton" role="button" style="width:50%; margin-left:25%; font-weight:bold; color:white; font-size:25px; margin-top: 30px">Check Out</a>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  </div>
+</div>

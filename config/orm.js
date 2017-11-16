@@ -2,8 +2,7 @@ var connection = require("./connection.js");
 
 var tableForPlanets = "exosale";
 var tableForCart = "cart"; ///////////
-var tableForReviews = "review"; /////////////
-var col = "burger_name, devoured, date"; //////////////
+var colForCart = "id_account, id_planet"; //////////////
 
 var orm = {
 
@@ -22,8 +21,9 @@ var orm = {
 	// cart
 	selectCart: function(condition, cb) {
 		var queryString = "SELECT * FROM " + tableForCart + " WHERE " + condition + ";";
-
-		connection.query(queryString, function(err, result) {
+		var joinQueryString = "SELECT * FROM exosale INNER JOIN cart ON exosale.id = cart.id_planet;"
+		console.log(joinQueryString);
+		connection.query(joinQueryString, function(err, result) {
 			if (err) {
 				throw err;
 			}
@@ -54,13 +54,13 @@ var orm = {
 		});
 	},
 
-	// review
-	insertOne: function(vals, cb) {
-		var queryString = "INSERT INTO " + tableForReviews + " (" + col + ") VALUES ('" + vals + "', FALSE, CURRENT_TIMESTAMP);";
+	// cart
+	insertOne: function(account_val, planet_val, cb) {
+		var queryString = "INSERT INTO " + tableForCart + " (" + colForCart + ") VALUES (" + account_val + ", " + planet_val + ");";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
-				throw err;
+				console.log("duplicate entry");
 			}
 			cb(result);			
 		});

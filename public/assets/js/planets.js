@@ -37,4 +37,22 @@ $(function() {
 		window.location.href=url;
 	});
 
+	$("#addProductButton").on("click", function(event) {
+		event.preventDefault();
+		var id = $(this).data("id");
+		// IF NOT SOLD
+
+		$.post("/api/cart/1/" + id).done(function(data) {
+			
+		});
+
+		$.ajax({
+			url: '/api/exoplanets/' + id,
+			type: 'PUT',
+			success: function(data) {
+				console.log(data);
+			}
+		});
+	});
+
 });

@@ -25,8 +25,8 @@ var exoplanet = {
 		});
 	},
 
-	insertOne: function(vals, cb) {
-		orm.insertOne(vals, function(res) {
+	insertOne: function(account_val, planet_val, cb) {
+		orm.insertOne(account_val, planet_val, function(res) {
 			cb(res);
 		});
 	},

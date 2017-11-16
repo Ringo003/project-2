@@ -4,23 +4,30 @@
       <h3 class="text-center">Be the Master of your own Universe</h3> 
       <h3>25% off 2nd Planet Purchase</h3>
       <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> <a href="http://localhost:3000/" style="color:white; font-size:70px">My Planet</a></h1>
-      <h1 class="text-right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart" style="text-decoration: none"> Cart</a></h1>
+      <h1 class="text-right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart/1" style="text-decoration: none"> Cart</a></h1>
     </div>
-  <div class="container">
+
+ <div class="container">
   <div class="jumbotron">
 
-        <div class="row">
+  <div class="row">
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
       <img src="/assets/img/loading.gif" alt="blue planet" style="width:150px; height:150px">
       <div class="caption">
-        <h2>Name : {{name}}</h2>
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-        <p><a href="#" class="btn btn-primary" role="button" style="width:100%; font-weight:bold; color:white; font-size:25px">Add To Cart</a>
+        <h1>Name : {{name}}</h1>
+        <h2>Mass : {{mass}} </h2>
+        <h2>Distance : {{distance}} </h2>
+        <h2>X-ray exposure : {{xray}} </h2>
+        <h2>Price : {{price}} </h2>
+
+
+        <a href="#" class="btn btn-primary" id="addProductButton" data-id="{{id}}" role="button" style="width:50%; font-weight:bold; color:white; font-size:25px; margin-left:25%; margin-top:30px">Add To Cart</a>
       </div>
     </div>
-  </div>
-</div>
     </div>
+	</div>
+    </div>
+</div>
 
 {{/each}}
