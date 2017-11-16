@@ -1,0 +1,81 @@
+<div class="page-header" style="margin: 40px 107.5px 20px 107.5px">
+    <h1 class="text-center">Be the Master of your own Universe</h1> <h3>25% off 2nd Planet Purchase</h3>
+      <h1 class="text-right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart" style="text-decoration: none"> Cart</a></h1>
+</div>
+<div class="container">
+<div class="jumbotron">
+	      <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> <a href="http://localhost:3000/" style="color:black">My Planet</a></h1>
+      <hr>
+      <h2 class="text-center">
+       Find Your Planet!</h2>
+      <br>
+
+      <div class="text-center">
+
+      <div class="dropdown" style="display: inline-block">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 10px 120px; font-weight:bold">
+          Filter
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+          <button type="button" class="btn btn-link" id="distance">Distance</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-link" id="mass">Mass</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-link" id="xray">X-ray exposure</button>
+        </li>
+       </ul>
+      </div>
+
+      <div class="dropdown" style="display: inline-block">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 10px 120px; font-weight:bold">
+          Order
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><button type="button" class="btn btn-link" id="asc">Ascending</button></li>
+          <li><button type="button" class="btn btn-link" id="desc">Descending</button></li>
+        </ul>
+      </div>
+
+      	<button type="button" class="btn btn-lg btn-danger" id="orderBy" data-col="" data-condition="">Find</button>
+
+      </div>
+
+
+    
+</div>
+
+<table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Mass</th>
+        <th>Distance</th>
+        <th>X-ray Exposure</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each planets}}
+        {{> planets/planet-block}}    
+      {{/each}}
+    </tbody>
+  </table>
+
+
+  <footer class="footer">
+      <div class="container">
+        <p> <a href="https://github.com/Ringo003/project-2" target="_blank">GitHub Repo</a></p>
+      </div>
+    </footer>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

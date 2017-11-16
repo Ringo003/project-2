@@ -1,0 +1,55 @@
+/* General Elements*/
+body{
+	background-image: url('/assets/img/giphy.gif');
+}
+h1{
+	color:white;
+}
+h3{
+	color:white;
+}
+.planet-images {
+	/*width: 300px;*/
+	/*height: 100px !important;*/
+}
+
+#orderBy {
+	padding: 10px 50px;
+}
+
+th, td {
+	color: white;
+	font-size: 25px;
+}
+
+a:link {
+
+    color: white;
+
+        text-decoration: none;
+
+}
+
+a:visited {
+
+    color: #98FB98;
+
+        text-decoration: none;
+
+}
+
+a:hover {
+
+    color: #87CEEB;
+
+        text-decoration: none;
+
+}
+
+a:active {
+
+    color: #FF0000;
+
+        text-decoration: none;
+
+}
