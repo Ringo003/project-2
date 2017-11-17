@@ -9,19 +9,6 @@ router.get("/", function(req, res) {
 	res.render("index");
 });
 
-// review
-router.get("/account/:id", function(req, res) {
-	var condition = "id = " + req.params.id;
-
-	exoplanet.selectAllReviews(condition, function(data) {
-		var hbsObject = {
-			burgers: data
-		};
-		console.log(hbsObject);
-		res.render("index", hbsObject);
-	});
-});
-
 router.get("/checkout", function(req, res) {
 	res.render("checkout");
 });
@@ -68,9 +55,27 @@ router.post("/api/cart/:account/:planet", function(req, res) {
 	});
 });
 
+// cart
+router.delete("/api/delete/:id", function(req, res) {
+	var condition = "id_planet = " + req.params.id;
+
+	exoplanet.deleteOne(condition, function(result) {
+		res.render("cart");
+	});
+});
+
 // sign up
 router.get("/signup/", function(req, res) {
 	res.render("signUp");
+});
+
+// sign up
+router.post("/api/account/new", function(req, res) {
+	var newUser = req.body;
+
+	exoplanet.addUser(newUser, function(result) {
+
+	});
 });
 
 // planet
@@ -78,6 +83,20 @@ router.put("/api/exoplanets/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
 
 	exoplanet.updateSold(true, condition, function(result) {
+		if (result.changedRows == 0) {
+	      // If no rows were changed, then the ID must not exist, so 404
+	      return res.status(404).end();
+	    } else {
+	      res.status(200).end();
+	    }
+	});
+});
+
+// planet
+router.put("/api/exoplanets/:id/undo", function(req, res) {
+	var condition = "id = " + req.params.id;
+
+	exoplanet.updateSold(false, condition, function(result) {
 		if (result.changedRows == 0) {
 	      // If no rows were changed, then the ID must not exist, so 404
 	      return res.status(404).end();

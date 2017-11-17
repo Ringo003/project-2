@@ -13,6 +13,10 @@ h3{
 	/*height: 100px !important;*/
 }
 
+.payment {
+	color: white;
+}
+
 #orderBy {
 	padding: 10px 50px;
 }

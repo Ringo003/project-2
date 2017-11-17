@@ -4,7 +4,7 @@
 
 
       <h1 class="text-right">
-      <span class="glyphicon glyphicon-pencil"></span><a href="http://localhost:3000/signup" style="text-decoration: none; margin-right: 20px"> Sign Up</a>
+      <span class="glyphicon glyphicon-pencil"></span><a href="http://localhost:3000/signup" style="text-decoration: none; margin-right: 20px"> My Account</a>
       <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart/1" style="text-decoration: none"> Cart</a></h1>
 </div>
 
@@ -39,16 +39,19 @@
                 Are you human?
               </label>
             </div>
-            <button type="submit" class="btn btn-primary">Sign up</button>
+            <button type="submit" class="btn btn-primary" id="signUpButton">Sign up</button>
           </form>
       </div>
+
+
+
       <div class="col-md-6">
         <h2>Welcome member! Please sign in.</h2>
         <form>
           <div class="form-group">
-            <label for="logEmail">Email address</label>
-            <input type="logEmail" class="form-control" id="logEmail" aria-describedby="logEmailHelp" placeholder="Email">
-            <small id="logEmailHelp" class="form-text text-muted">Email</small>
+            <label for="logEmail">Username</label>
+            <input type="logUsername" class="form-control" id="logUsername" aria-describedby="logEmailHelp" placeholder="Username">
+            <small id="logEmailHelp" class="form-text text-muted">Username</small>
           </div>
           <div class="form-group">
             <label for="logPassword">Password</label>
@@ -60,7 +63,7 @@
                 Are you human?
               </label>
             </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" id="logInButton">Login</button>
         </form>
       </div>
     </div>
