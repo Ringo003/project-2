@@ -13,12 +13,21 @@ h3{
 	/*height: 100px !important;*/
 }
 
+.payment {
+	color: white;
+}
+
 #orderBy {
 	padding: 10px 50px;
 }
 
-th, td {
+#searchTable {
 	color: white;
+	font-size: 25px;
+}
+
+#cartTable {
+	color: black;
 	font-size: 25px;
 }
 

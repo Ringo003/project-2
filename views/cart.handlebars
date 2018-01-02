@@ -1,5 +1,3 @@
-{{#each planets}}
-
 <div class="page-header" style="margin: 40px 107.5px 20px 107.5px">
       <h3 class="text-center">Be the Master of your own Universe</h3> 
       <h3>25% off 2nd Planet Purchase</h3>
@@ -9,29 +7,35 @@
       <h1 class="text-right">
       <span class="glyphicon glyphicon-pencil"></span><a href="http://localhost:3000/signup" style="text-decoration: none; margin-right: 20px"> My Account</a>
       <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart/1" style="text-decoration: none"> Cart</a></h1>
-    </div>
+</div>
 
- <div class="container">
+<div class="container">
   <div class="jumbotron">
 
   <div class="row">
   <div class="col-sm-12 col-md-12">
-    <div class="thumbnail">
-      <img src="/assets/img/loading.gif" alt="blue planet" style="width:150px; height:150px">
-      <div class="caption">
-        <h1>Name : {{name}} </h1>
-        <h2>Mass : {{mass}} times Earth's mass</h2>
-        <h2>Distance : {{distance}} parsec ( 1 parsec = 3.26 light years )</h2>
-        <h2>X-ray exposure : {{xray}} Lx </h2>
-        <h2>Price : {{price}} Pesos</h2>
+      <div class="cartTable">
+        <table class="table table-condensed" id="cartTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each planets}}
+              {{> planets/cart-block}} 
+            {{/each}}
+          </tbody>
+        </table>
 
+        <a href="#" class="btn btn-primary" id="checkoutButton" role="button" style="width:50%; margin-left:25%; font-weight:bold; color:white; font-size:25px; margin-top: 30px">Check Out</a>
 
-        <a href="#" class="btn btn-primary" id="addProductButton" data-id="{{id}}" role="button" style="width:50%; font-weight:bold; color:white; font-size:25px; margin-left:25%; margin-top:30px">Add To Cart</a>
       </div>
     </div>
-    </div>
-	</div>
-    </div>
+  </div>
+  </div>
+  
+  </div>
 </div>
-
-{{/each}}

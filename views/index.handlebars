@@ -1,45 +1,31 @@
 <div class="page-header" style="margin: 40px 107.5px 20px 107.5px">
-    <h1 class="text-center">Be the Master of your own Universe</h1> <h3>25% off 2nd Planet Purchase</h3>
-      <h1 class="text-right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart" style="text-decoration: none"> Cart</a></h1>
+    <h3 class="text-center">Be the Master of your own Universe</h3> <h3>25% off 2nd Planet Purchase</h3>
+      <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> <a href="http://localhost:3000/" style="color:white; font-size:70px">My Planet</a></h1>
+
+
+      <h1 class="text-right">
+      <span class="glyphicon glyphicon-pencil"></span><a href="http://localhost:3000/signup" style="text-decoration: none; margin-right: 20px"> My Account</a>
+      <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://localhost:3000/cart/1" style="text-decoration: none"> Cart</a></h1>
 </div>
 <div class="container">
 <div class="jumbotron">
-	      <h1 class="text-center"><span class="glyphicon glyphicon-globe"></span> <a href="http://localhost:3000/" style="color:black">My Planet</a></h1>
-      <hr>
       <h2 class="text-center">
        Find Your Planet!</h2>
       <br>
 
       <div class="text-center">
 
-      <div class="dropdown" style="display: inline-block">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 10px 120px; font-weight:bold">
-          Filter
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li>
-          <button type="button" class="btn btn-link" id="distance">Distance</button>
-        </li>
-        <li>
-          <button type="button" class="btn btn-link" id="mass">Mass</button>
-        </li>
-        <li>
-          <button type="button" class="btn btn-link" id="xray">X-ray exposure</button>
-        </li>
-       </ul>
+      <div class="btn-group" role="group" aria-label="Basic example" style="margin-right: 50px">
+        <label class="btn btn-default"><input type="radio" name="flavorGroup" id="distance" data-bind="checked: spamFlavor" /> Distance</label>
+        <label class="btn btn-default"><input type="radio" name="flavorGroup" id="mass" data-bind="checked: spamFlavor" /> Mass</label>
+        <label class="btn btn-default"><input type="radio" name="flavorGroup" id="xray" data-bind="checked: spamFlavor" /> X-ray exposure</label>
       </div>
 
-      <div class="dropdown" style="display: inline-block">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 10px 120px; font-weight:bold">
-          Order
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><button type="button" class="btn btn-link" id="asc">Ascending</button></li>
-          <li><button type="button" class="btn btn-link" id="desc">Descending</button></li>
-        </ul>
+      <div class="btn-group" role="group" aria-label="Basic example" style="margin-right: 50px">
+        <label class="btn btn-default"><input type="radio" name="flavorGroup2" id="asc" data-bind="checked: spamFlavor" /> Ascending</label>
+        <label class="btn btn-default"><input type="radio" name="flavorGroup2" id="desc" data-bind="checked: spamFlavor" /> Descending</label>
       </div>
+
 
       	<button type="button" class="btn btn-lg btn-danger" id="orderBy" data-col="" data-condition="">Find</button>
 
@@ -49,7 +35,7 @@
     
 </div>
 
-<table class="table table-condensed">
+<table class="table table-condensed" id="searchTable">
     <thead>
       <tr>
         <th>Name</th>
